@@ -22,11 +22,3 @@ top 统计显示安装时 CPU、内存高占用
 - 设置文件的权限，防止误操作
     chmod 600 /var/swapfile
 
-1. 按时
-    1. 山东省
-        1. s
-        2. 1
-        3. w
-    2. sd
-
-[gitbook](http://www.chengweiyang.cn/gitbook/index.html)
