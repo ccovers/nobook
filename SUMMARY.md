@@ -9,5 +9,8 @@
     * [git命令](git/git.md)
 * [sql]
     * [postgres](sql/postgressql.md)
+* [mysql]
+    * [读写分离](mysql/rw_sperator.md)
+    * [主从分布](mysql/slave_config.md) 
 * [fastdfs]
     * [部署说明](fastdfs/部署说明.md)
