@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 * [linux]
-    * [swap] (linux/swap.md)
+    * [swap](linux/swap.md)
 * [git]
-    * [git命令] (git/git.md)
+    * [git命令](git/git.md)
 * [sql]
-    * [postgres] (sql/postgressql.md)
+    * [postgres](sql/postgressql.md)
 
