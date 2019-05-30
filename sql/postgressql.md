@@ -42,3 +42,14 @@ CONCAT(char c1, char c2, ..., char cn)
 SELECT CONCAT(id, ':', name) AS key FROM table;
 SELECT id+':'+name AS key FROM table;
 ```
+
+# SELECT DISTINCT ON (expression[...])
+把记录数据根据`[...]`的值进行分组，分组之后仅返回每一组的第一行。若未指定`ORDER BY`语句，返回的第一条是不确定的，若使用了`ORDER BY`语句，那么[...]里面的值必须靠近`ORDER BY`子句最左边
+```
+SELECT DISTINCT ON(name)
+	id, name
+FROM table
+ORDER BY name, id
+```
+
+
