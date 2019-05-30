@@ -52,4 +52,44 @@ FROM table
 ORDER BY name, id
 ```
 
-
+# WITH
+```
+WITH
+start AS (
+SELECT DISTINCT ON(fund_id)
+	fund_id, amount
+FROM logs
+WHERE
+	set_id=22 AND created_at<='2019-05-29' AND
+	company_id IN (
+		SELECT company_id
+		FROM compsnies
+	)
+ORDER BY fund_id, id ASC
+),
+period AS (
+SELECT fund_id,
+	SUM(amount) FILTER (WHERE pay_type = 0) AS amount_in,
+	SUM(amount) FILTER (WHERE pay_type = 1) AS amount_out
+FROM logs
+WHERE
+	set_id=22 AND
+	created_at BETWEEN '2019-05-29' AND '2019-05-30' AND
+	company_id IN (
+		SELECT company_id
+		FROM compsnies
+	)
+GROUP BY fund_id
+)
+SELECT
+	account.fund_name, account.company_id,
+	account.bank, account.bank_account,
+	COALESCE(start.amount, account.amount) AS amount_start,
+	COALESCE(period.amount_in, 0) AS amount_in,
+	COALESCE(period.amount_out, 0) AS amount_out,
+FROM fund_accounts AS account
+LEFT JOIN start ON account.id = start.fund_id
+LEFT JOIN period ON account.id = period.fund_id
+WHERE
+	set_id=22
+```
