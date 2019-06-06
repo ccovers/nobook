@@ -16,7 +16,7 @@ ON CONFLICT DO UPDATE
 SET name=EXCLUDED.name, num=t.num+EXCLUDED.num
 ```
 
-# TO_CHAR 函数
+## TO_CHAR 函数
 将类型转换为字符串
 ```
 SELECT TO_CHAR(bill_date, 'YYYY-MM-DD') AS bill_date,
@@ -26,7 +26,7 @@ ORDER BY created_at DESC;
 ```
 
 
-# COALESCE 函数
+## COALESCE 函数
 依次参考各参数表达式，遇到非null值即停止并返回该值。
 ```
  COALESCE(expression_1, expression_2, ...,expression_n)
@@ -34,7 +34,7 @@ ORDER BY created_at DESC;
  SELECT COALESCE(name, 'opgo') AS name FROM table;
 ```
 
-# CONCAT 函数
+## CONCAT 函数
 字符串拼接，连接多个字符串（字段）
 ```
 CONCAT(char c1, char c2, ..., char cn)
@@ -43,7 +43,7 @@ SELECT CONCAT(id, ':', name) AS key FROM table;
 SELECT id+':'+name AS key FROM table;
 ```
 
-# SELECT DISTINCT ON (expression[...])
+## SELECT DISTINCT ON (expression[...])
 把记录数据根据`[...]`的值进行分组，分组之后仅返回每一组的第一行。若未指定`ORDER BY`语句，返回的第一条是不确定的，若使用了`ORDER BY`语句，那么[...]里面的值必须靠近`ORDER BY`子句最左边
 ```
 SELECT DISTINCT ON(name)
@@ -52,44 +52,41 @@ FROM table
 ORDER BY name, id
 ```
 
-# WITH
+## WITH
 ```
-WITH
-start AS (
-SELECT DISTINCT ON(fund_id)
-	fund_id, amount
-FROM logs
-WHERE
-	set_id=22 AND created_at<='2019-05-29' AND
-	company_id IN (
-		SELECT company_id
-		FROM compsnies
-	)
-ORDER BY fund_id, id ASC
-),
-period AS (
-SELECT fund_id,
-	SUM(amount) FILTER (WHERE pay_type = 0) AS amount_in,
-	SUM(amount) FILTER (WHERE pay_type = 1) AS amount_out
-FROM logs
-WHERE
-	set_id=22 AND
-	created_at BETWEEN '2019-05-29' AND '2019-05-30' AND
-	company_id IN (
-		SELECT company_id
-		FROM compsnies
-	)
-GROUP BY fund_id
-)
+WITH temp(id, name, phone, address)
+	AS (VALUES(1,'小明',15982195424,'四川'),(2,'小红',15982195424,'四川'))
+SELECT * FROM temp;
+```
+
+
+## CASE WHEN THEN
+根据条件选择合适的值
+```
 SELECT
-	account.fund_name, account.company_id,
-	account.bank, account.bank_account,
-	COALESCE(start.amount, account.amount) AS amount_start,
-	COALESCE(period.amount_in, 0) AS amount_in,
-	COALESCE(period.amount_out, 0) AS amount_out,
-FROM fund_accounts AS account
-LEFT JOIN start ON account.id = start.fund_id
-LEFT JOIN period ON account.id = period.fund_id
-WHERE
-	set_id=22
+	id, name,
+	(
+		CASE
+			WHEN flag=0 then amount
+			WHEN flag=1 then 0
+		END
+	) AS income,
+	FROM
+		recharge
+	ORDER BY created_at ASC;
+```
+
+## OVER
+针对数据排序并每行获取统计的累计值（前面所有行之和）
+```
+SELECT
+	SUM(
+		CASE
+			WHEN flag=0 then amount
+			WHEN flag=1 then -amount
+		END
+	) OVER(PARTITION BY account_id ORDER BY payment_date, created_at) AS balance
+	FROM
+		recharge
+	ORDER BY payment_date, account_id, created_at ASC;
 ```
