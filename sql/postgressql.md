@@ -80,13 +80,8 @@ SELECT
 针对数据排序并每行获取统计的累计值（前面所有行之和）
 ```
 SELECT
-	SUM(
-		CASE
-			WHEN flag=0 then amount
-			WHEN flag=1 then -amount
-		END
-	) OVER(PARTITION BY account_id ORDER BY payment_date, created_at) AS balance
+	SUM(amount) OVER(PARTITION BY name ORDER BY created_at) AS balance
 	FROM
 		recharge
-	ORDER BY payment_date, account_id, created_at ASC;
+	ORDER BY name, created_at ASC;
 ```

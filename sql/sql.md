@@ -2,21 +2,20 @@
 
 ## 从一张表拷贝数据更新另一张表
 ```
-select sums.qty,stock.qty
-from stock_sums AS sums
-LEFT JOIN
-	(
-		select property, SUM(qty) AS qty
-		from stocks
-		group by property
-	) AS stock ON sums.property=stock.property
-
-UPDATE stock_sums
+UPDATE stock_new
 SET qty=stock.qty
 FROM (
-		select property, SUM(qty) AS qty
-		from stocks
-		group by property
-	)  AS stock
-WHERE property=stock.property
+	SELECT property, SUM(qty) AS qty
+	FROM stocks
+	GROUP BY name
+)  AS stock
+WHERE name=stock.name
+
+UPDATE stock_new
+SET qty=stock.qty
+FROM
+	(
+		SELECT name,SUM(qty) FROM (VALUES (1,'a',10),(2,'b',100),(3,'b',10)) AS stock(id, name, qty) GROUP BY name
+	) AS stock
+WHERE name=stock.name
 ```
