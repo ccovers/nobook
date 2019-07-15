@@ -1,5 +1,8 @@
 # api
 
+## etcd客户端api
+git clone https://github.com/etcd-io/etcd.git
+
 ## 创建键值
 curl http://127.0.0.1:2379/v2/keys/cqh -XPUT -d value="小小"
 
