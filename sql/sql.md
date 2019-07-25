@@ -19,3 +19,11 @@ FROM
 	) AS stock
 WHERE name=stock.name
 ```
+
+## 修改表字段类型和名称
+```
+ALTER TABLE mytable ALTER COLUMN mycolumn TYPE TEXT;
+ALTER TABLE goods.parts RENAME cus_veh_model TO cus_veh_models;
+```
+
+

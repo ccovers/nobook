@@ -85,3 +85,85 @@ SELECT
 		recharge
 	ORDER BY name, created_at ASC;
 ```
+
+## 递归查询 RECURSIVE
+* table
+```
+table veh_models {
+	id int64
+	parent_id int64
+	name string
+}
+```
+* 查询所有父节点
+```
+	WITH RECURSIVE T AS (
+		SELECT A.id, A.parent_id, A.name, ARRAY[A.id] AS path
+		FROM veh_models A
+		WHERE A.id = 3
+
+		UNION ALL
+
+		SELECT
+			K.id, K.parent_id, K.name, K.id || T.path
+		FROM veh_models K
+		INNER JOIN T ON T.parent_id = K.id
+	)
+	SELECT * FROM T
+	ORDER BY id;
+```
+
+* 查询所有子节点
+```
+	WITH RECURSIVE T AS(
+		SELECT A.id, A.parent_id, A.name, ARRAY[A.id] AS path
+		FROM veh_models AS A
+		WHERE A.id = 3
+
+		UNION ALL
+
+ 		SELECT
+ 			K.id, K.parent_id, K.name, T.path || K.id
+		FROM veh_models K
+		INNER JOIN T ON T.id = K.parent_id
+	)
+	SELECT * FROM T
+	ORDER BY id;
+```
+
+* 查询所有子节点及路径、深度
+```
+	WITH RECURSIVE T AS (
+    	SELECT A.id, A.parent_id, A.name, ARRAY[id] AS path, 1 AS depath
+   		FROM veh_models AS A
+    	WHERE A.id = 3
+
+    	UNION ALL
+
+    	SELECT K.id, K.parent_id, K.name, K.id || T.path, T.depath + 1 AS depath
+    	FROM veh_models K
+    	JOIN T ON T.id = K.parent_id
+    )
+    SELECT * FROM T
+	ORDER BY path;
+```
+
+* 查询所有路径
+```
+	WITH RECURSIVE T AS (
+		SELECT A.id, A.name, CAST(A.name AS VARCHAR(4000)) AS name_full_path
+		FROM veh_models A
+		WHERE A.parent_id = 0
+
+		UNION ALL
+
+		SELECT
+			K.id, K.name,
+			CAST(T.name_full_path || '/' || K.name AS VARCHAR (4000)) AS ame_full_path
+		FROM veh_models K
+		INNER JOIN T ON T.id = K.parent_id
+	)
+	SELECT * FROM T
+	ORDER BY id;
+```
+
