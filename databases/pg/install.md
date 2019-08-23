@@ -37,3 +37,9 @@ select tablename from pg_tables where schemaname='storage';
 
 11. 查看扩展
 \dFp
+
+
+12. 更新自增ID值
+SELECT SETVAL('my_table_id_seq',(SELECT MAX(id) from my_table));
+
+
