@@ -76,7 +76,9 @@ git branch -d xxx
 11. 删除远程分支
 git push origin --delete xxx
 
-
+12. 变基（将`master`的变化在`branch`上重演）
+git checkout `branch`
+git rebase master
 
 ### 查看状态、日志、对比差异、版本操作
 1. 查看状态

@@ -20,10 +20,26 @@ FROM
 WHERE name=stock.name
 ```
 
-## 修改表字段类型和名称
+## 插入数据从另一张表查询
 ```
-ALTER TABLE mytable ALTER COLUMN mycolumn TYPE TEXT;
-ALTER TABLE goods.parts RENAME cus_veh_model TO cus_veh_models;
+INSERT INTO table(id, code, name) VALUES(1, 'BBB', '大灯');
+
+INSERT INTO table SELECT id, CONCAT('code_', name), name FROM table_breif;
 ```
 
+## 查询并设置表的自增键
+```
+SELECT * FROM table_id_seq ;
+SELECT SETVAL('table_id_seq', (SELECT MAX(id) FROM table));
+```
 
+## 联表查询
+```
+WITH TEMP AS (
+SELECT id, name, created_at FROM table
+UNION ALL 
+SELECT id, name, created_at FROM table_breif
+)
+SELECT * FROM TEMP
+ORDER BY created_at ASC;
+```

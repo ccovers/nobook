@@ -41,7 +41,7 @@ select to_tsvector('zhcfg', '活塞环套') @@ plainto_tsquery('zhcfg', '活塞�
 
 ## 针对`table`创建索引
 1. 创建唯一索引（带有附加条件的方式）
-CREATE UNIQUE INDEX IF NOT EXISTS name_key ON students (name, (score > 0)) WHERE name != ''
+CREATE UNIQUE INDEX IF NOT EXISTS name_key ON table (name, (score > 0)) WHERE name != ''
 
 2. 创建`pg_trgm`索引
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
