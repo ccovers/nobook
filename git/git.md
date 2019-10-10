@@ -102,9 +102,19 @@ git reset --hard HEAD^
 7. 返回前2个版本
 git reset --hard HEAD~2
 
-9. 回滚当前分支到指定的版本
+8. 回滚当前分支到指定的版本
 git reset --hard 'commit id'
 
+
+### rebase
+git branch
+git checkout mybranch
+git rebase master
+git checkout --ours(theirs)
+git add .
+git rebase --continue
+git rebase --skip
+git branch mybranch master --stat
 
 
 
