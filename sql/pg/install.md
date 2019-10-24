@@ -43,3 +43,5 @@ select tablename from pg_tables where schemaname='storage';
 SELECT SETVAL('my_table_id_seq',(SELECT MAX(id) from my_table));
 
 
+
+

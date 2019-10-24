@@ -27,5 +27,3 @@ ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE(id);
 ## 删除约束
 ALTER TABLE table_name DROP CONSTRAINT constraint_name;
 
-
-
