@@ -8,7 +8,7 @@ ON CONFLICT DO UPDATE/IGNORE/NOTHING ...
 RETURNING ...
 
 INSERT INTO table AS t(id, name, created_at) VALUES (1, 'dong', NOW()),(2, 'hong', NOW())
-ON CONFLICT(id) DO UPDATE
+ON CONFLICT(id) WHERE id < 100 DO UPDATE
 SET name=EXCLUDED.name, created_at=EXCLUDED.created_at;
 ```
 
