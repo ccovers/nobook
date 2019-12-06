@@ -38,10 +38,14 @@ select tablename from pg_tables where schemaname='storage';
 11. 查看扩展
 \dFp
 
+12. 格式化表
+TRUNCATE mytable RESTART IDENTITY;
 
-12. 更新自增ID值
-SELECT SETVAL('my_table_id_seq',(SELECT MAX(id) from my_table));
+13. 从另一张表插入
+INSERT INTO mytable(name, score, remark) SELECT name, score, '' FROM othertable where name != '';
 
+14. 更新自增ID值
+SELECT SETVAL('my_table_id_seq',(SELECT MAX(id) FROM my_table));
 
 
 

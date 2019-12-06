@@ -116,7 +116,8 @@ git rebase --continue
 git rebase --skip
 git branch mybranch master --stat
 
-
+1. 使用`otherbranch`分支的指定文件`test.md`覆盖本分支的文件`test.md`
+git checkout otherbranch -- test.md
 
 
 
