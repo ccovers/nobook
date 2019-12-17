@@ -96,14 +96,21 @@ git reflog
 5. 查看`filename`文件的是否修改，修改了哪个位置
 git diff HEAD -- filename
 
-6. 返回前一版本
+6. 查看分支或版本之间的差异
+git diff branch1 branch2 --stat 路径名
+git diff branch1 branch2 路径名
+
+7. 返回前一版本
 git reset --hard HEAD^
 
-7. 返回前2个版本
+8. 返回前2个版本
 git reset --hard HEAD~2
 
-8. 回滚当前分支到指定的版本
+9. 回滚当前分支到指定的版本
 git reset --hard 'commit id'
+
+10. 使用`otherbranch`分支的指定文件`test.md`覆盖本分支的文件`test.md`
+git checkout otherbranch -- test.md
 
 
 ### rebase
@@ -116,8 +123,7 @@ git rebase --continue
 git rebase --skip
 git branch mybranch master --stat
 
-1. 使用`otherbranch`分支的指定文件`test.md`覆盖本分支的文件`test.md`
-git checkout otherbranch -- test.md
+
 
 
 
