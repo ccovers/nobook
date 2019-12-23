@@ -61,6 +61,12 @@ ORDER BY name, id
 WITH temp(id, name, phone, address)
 	AS (VALUES(1,'小明',15982195424,'四川'),(2,'小红',15982195424,'四川'))
 SELECT * FROM temp;
+
+
+SELECT * FROM
+(VALUES(1,'小明啊',15982195424,'四川'),(2,'小明',15982195424,'四川'),(3,'小红',15982195424,'四川'))
+AS t(id, name, phone, address)
+ORDER BY POSITION(UPPER('明') IN UPPER(name)),LENGTH(name);
 ```
 
 
