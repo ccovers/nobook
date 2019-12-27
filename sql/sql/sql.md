@@ -44,6 +44,7 @@ SELECT * FROM TEMP
 ORDER BY created_at ASC;
 ```
 
+## dblink
 SELECT * FROM (
   SELECT stocks.id, stocks.account_set_id, stocks.position_id, stocks.batch_no, stocks.warehouse_id,
   positions.warehouse_id AS real_warehouse_id

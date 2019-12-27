@@ -1,0 +1,3 @@
+# telnet
+
+telnet ip port

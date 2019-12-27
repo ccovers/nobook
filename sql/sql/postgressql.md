@@ -57,6 +57,8 @@ ORDER BY name, id
 ```
 
 ## WITH
+- POSITION(UPPER('明') IN UPPER(name)) 判断给定字符在字段中的位置
+- LENGTH(name) 判断字段长度
 ```
 WITH temp(id, name, phone, address)
 	AS (VALUES(1,'小明',15982195424,'四川'),(2,'小红',15982195424,'四川'))
@@ -68,7 +70,6 @@ SELECT * FROM
 AS t(id, name, phone, address)
 ORDER BY POSITION(UPPER('明') IN UPPER(name)),LENGTH(name);
 ```
-
 
 ## CASE WHEN THEN
 根据条件选择合适的值
