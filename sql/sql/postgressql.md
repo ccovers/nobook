@@ -8,7 +8,7 @@ ON CONFLICT DO UPDATE/IGNORE/NOTHING ...
 RETURNING ...
 
 INSERT INTO table AS t(id, name, created_at) VALUES (1, 'dong', NOW()),(2, 'hong', NOW())
-ON CONFLICT(id) DO UPDATE
+ON CONFLICT(id) WHERE id < 100 DO UPDATE
 SET name=EXCLUDED.name, created_at=EXCLUDED.created_at;
 ```
 
@@ -57,12 +57,19 @@ ORDER BY name, id
 ```
 
 ## WITH
+- POSITION(UPPER('明') IN UPPER(name)) 判断给定字符在字段中的位置
+- LENGTH(name) 判断字段长度
 ```
 WITH temp(id, name, phone, address)
 	AS (VALUES(1,'小明',15982195424,'四川'),(2,'小红',15982195424,'四川'))
 SELECT * FROM temp;
-```
 
+
+SELECT * FROM
+(VALUES(1,'小明啊',15982195424,'四川'),(2,'小明',15982195424,'四川'),(3,'小红',15982195424,'四川'))
+AS t(id, name, phone, address)
+ORDER BY POSITION(UPPER('明') IN UPPER(name)),LENGTH(name);
+```
 
 ## CASE WHEN THEN
 根据条件选择合适的值
