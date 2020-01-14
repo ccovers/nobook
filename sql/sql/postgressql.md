@@ -29,7 +29,6 @@ WHERE id IN (1, 2, 3)
 ORDER BY created_at DESC;
 ```
 
-
 ## COALESCE 函数
 依次参考各参数表达式，遇到非null值即停止并返回该值。
 ```
@@ -69,6 +68,12 @@ SELECT * FROM
 (VALUES(1,'小明啊',15982195424,'四川'),(2,'小明',15982195424,'四川'),(3,'小红',15982195424,'四川'))
 AS t(id, name, phone, address)
 ORDER BY POSITION(UPPER('明') IN UPPER(name)),LENGTH(name);
+```
+
+## FILTER
+过滤
+```
+SELECT SUM(amount) FILTER (WHERE payment_type = 0) AS amount FROM logs;
 ```
 
 ## CASE WHEN THEN
