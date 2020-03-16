@@ -112,6 +112,10 @@ git reset --hard 'commit id'
 10. 使用`otherbranch`分支的指定文件`test.md`覆盖本分支的文件`test.md`
 git checkout otherbranch -- test.md
 
+11. 两分支部分合并
+A分支上有a、b 、c文件需要合并到B分支，切换到B分支，合并文件列表：
+git checkout B
+git checkout A a b c
 
 ### rebase
 git branch
