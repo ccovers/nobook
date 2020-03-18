@@ -125,6 +125,7 @@ git checkout --ours(theirs)
 git add .
 git rebase --continue
 git rebase --skip
+git rebase --abort
 git branch mybranch master --stat
 
 

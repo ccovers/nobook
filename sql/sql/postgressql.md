@@ -1,5 +1,10 @@
 # POSTGRESSQL
 
+## 优化
+```
+EXPLAIN ANALYZE SELECT * FROM table;
+```
+
 ## UPSERT特性
 当插入SQL违反约束的情况下，支持定义动作，而不抛出错误
 ```
