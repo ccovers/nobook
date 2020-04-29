@@ -51,3 +51,8 @@ docker rmi ImageID
 docker rm ContainerID
 
 
+## 查看日志
+docker logs -f CONTAINER_ID
+docker logs -f -t --since="2018-02-08" --tail=100 CONTAINER_ID
+
+
