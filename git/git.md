@@ -117,6 +117,13 @@ A分支上有a、b 、c文件需要合并到B分支，切换到B分支，合并�
 git checkout B
 git checkout A a b c
 
+### 行查询
+1. 查看文件所有行的修改及`commit-id`
+git blame filename
+
+2. 查看详细的修改提交记录
+git show commit-id
+
 ### rebase
 git branch
 git checkout mybranch
