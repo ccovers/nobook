@@ -28,7 +28,7 @@ CREATE TABLE `currency` (
 migrate -database="mysql://user_name:user_passwd@tcp(127.0.0.1:3306)/db_name" -source=file:// goto x
 
 # migrate version up by x (e.g. n -> n + x)
-migrate -database="mysql://root:jJKcblxDIniDEEJB@tcp(127.0.0.1:3306)/newd_dev" -source=file:// up x
+migrate -database="mysql://root:jJKcblxDIniDEEJB@tcp(127.0.0.1:3306)/db_name" -source=file:// up x
 
 # migrate version down by x (e.g. n -> n - x)
-migrate -database="mysql://root:jJKcblxDIniDEEJB@tcp(127.0.0.1:3306)/newd_dev" -source=file:// down x
+migrate -database="mysql://root:jJKcblxDIniDEEJB@tcp(127.0.0.1:3306)/db_name" -source=file:// down x

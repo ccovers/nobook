@@ -1,3 +1,6 @@
+# mysql案列
+
+## 查询学科最大分数的学生
 CREATE TABLE `school_table` (
   `id` bigint(255) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
   `student` varchar(256) NOT NULL COMMENT '学生',
@@ -27,3 +30,16 @@ CREATE TABLE `school_table` (
 
 查询每学科最大分数的学生:
 SELECT a.student,a.subject,a.score FROM school_table AS a JOIN (SELECT subject,max(score) AS max_score FROM school_table GROUP BY subject) AS b ON a.subject = b.subject AND a.score = b.max_score;
+
+
+## 更新`mysql`的`json`字段
+
++----+---------+
+| id | data   | 
++----+---------+
+| 10 |  {'num':20,'raw':{'class':'二一班','students':[{'name':'xiaoxiao','score':66}]}}   |
++----+---------+
+
+SELECT `data`->'$raw.num' FROM `table` WHERE `id`=10;
+UPDATE `table` SET data=JSON_SET(data, ‘$.raw.num, 60) WHERE `id`=10;
+UPDATE `table` SET `data`=JSON_SET(`data`, '$.raw.students', JSON_ARRAY(JSON_OBJECT('name', 'xiaoming', 'score', 88), JSON_OBJECT('name','xiaohong','score',96))) WHERE `id`=10;

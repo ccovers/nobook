@@ -8,14 +8,28 @@
 - 一个没有任何父镜像的镜像，谓之基础镜像
 - 所有镜像都是通过一个 64 位十六进制字符串 （内部是一个 256 bit 的值）来标识的。 为简化使用，前 12 个字符可以组成一个短ID，可以在命令行中使用。短ID还是有一定的 碰撞机率，所以服务器总是返回长ID。
 
+## 搜索镜像
+docker search centos
+
 ## 获取镜像
+docker pull centos
 docker pull 仓库名（centos，仓库后可加tag标记不同版本的镜像，如centos:7.2.115）
 
-## 列出本地镜像
+## 列出本地镜像/容器
 docker images
+docker ps -a
 
 ## 运行镜像
-docker run -t -i ImageID /bin/bash
+docker run -d -p 5555:22 --name mydocker --privileged=true centos /usr/sbin/init
+docker exec -it mydocker /bin/bash
+
+docker run -ti ImageID /bin/bash
+docker attach containerID
+docker start containerID
+docker stop containerID
+docker restart containerID
+
+
 
 ## 提交新镜像
 docker commit -m '说明' -a '指定更新的用户信息' ContainerID 目标仓库/目标镜像
