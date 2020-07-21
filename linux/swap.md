@@ -21,4 +21,5 @@ top 统计显示安装时 CPU、内存高占用
     swapon /var/swapfile
 - 设置文件的权限，防止误操作
     chmod 600 /var/swapfile
-
+- 修改`/etc/fstab`文件，系统重新启动后自动生效
+    echo '/var/swap swap swap defaults  0 0' >> /etc/fstab
