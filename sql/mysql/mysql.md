@@ -37,6 +37,10 @@ CREATE TABLE `question` (
   UNIQUE KEY `i_title` (`title`) USING BTREE COMMENT '题目索引'
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COMMENT='题库主表';
 
+## 查询时强制索引
+SELECT * FROM question FORCE INDEX(i_title) WHERE title = '科技';
+
+
 ## 删除表中数据，并且自动增加字段的默认初始值重新从1开始
 TRUNCATE TABLE
 

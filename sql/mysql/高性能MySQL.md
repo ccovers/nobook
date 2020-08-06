@@ -13,8 +13,8 @@
 	如果系统花费大量的时间来管理锁，而不是存取数据，那么系统的性能可能会因此受到影响。
 - 所谓锁的策略，就是在锁的开销和数据的安全性之间寻求平衡。
 
-## 表锁、行级锁
-- 表锁（table lock）: `mysql`中最基本的锁策略，并且是开销最小的策略。
+## 表锁、行级锁 (https://zhuanlan.zhihu.com/p/149228460)
+- 表锁（table lock）: `mysql`中最基本的锁策略，并且是开销最小的策略。（lock table t read/write; unlock tables; 除了使用 unlock tables 显示释放锁之外，会话持有其他表锁时执行 lock table 语句会释放会话之前持有的锁；会话持有其他表锁时执行 start transaction 或者 begin 开启事务时，也会释放之前持有的锁。)
 - 行级锁（row lock）: 最大程度地支持并发处理（同时也带来了最大的锁开销）。
 - 举个例子，一个用户表user，有主键id和用户生日birthday。
 	+ 当你使用`update … where id=?`这样的语句时，数据库明确知道会影响哪一行，它就会使用行锁；
