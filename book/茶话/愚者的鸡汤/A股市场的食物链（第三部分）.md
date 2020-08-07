@@ -1,5 +1,6 @@
 # A股市场的食物链（第三部分）
 [A股市场的食物链]: (https://articles.zsxq.com/id_notmim6gdolc.html)
+[url]: (https://t.zsxq.com/ZZZRbAe)
 
 好了，今天进入高潮部分，看一个技术图形者如何自黑！
 

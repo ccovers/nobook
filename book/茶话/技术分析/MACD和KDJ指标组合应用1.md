@@ -1,5 +1,6 @@
 # MACD和KDJ指标组合应用1
 [MACD和KDJ指标组合应用]: (https://articles.zsxq.com/id_4rz6jwsob82w.html)
+[url]: (https://t.zsxq.com/AEYJMJI)
 
 这一个指标组合，是非常简单高效的波段性交易系统，属于原创性的知识，其他地方基本是看不到的，所以大家也不要随便发给别人。
 

@@ -1,5 +1,6 @@
 # A股市场的食物链（第二部分）
 [A股市场的食物链]: (https://articles.zsxq.com/id_ltkoe215xs5u.html)
+[url]: (https://t.zsxq.com/AQbeuVj)
 
 书接上回，继续胡说八道：
 对于题材热点派来说，天地之风口就是天地大势，顺之则昌、逆之则亡。

@@ -1,5 +1,6 @@
 # KDJ指标原理及用法（寻找精确买点）
 [KDJ指标原理及用法（寻找精确买点）]: (https://articles.zsxq.com/id_6nlst01g0pzz.html)
+[url]: (https://t.zsxq.com/vFeAMfM)
 
 认识KDJ
 

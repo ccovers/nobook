@@ -1,5 +1,6 @@
 # A股市场的食物链（第一部分）
 [A股市场的食物链]: (https://articles.zsxq.com/id_ohowxw2c47qc.html)
+[url]: (https://t.zsxq.com/Aem6EI6)
 
 好久没在星球发文了，也好久没在星球写作业了，昨天听了茶主一些八卦，估计他心中有点不爽，我就写篇文字给他
 热热场子吧。

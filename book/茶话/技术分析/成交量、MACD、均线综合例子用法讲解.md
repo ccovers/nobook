@@ -1,5 +1,6 @@
 # 成交量、MACD、均线综合例子用法讲解
 [成交量、MACD、均线综合例子用法讲解]: (https://articles.zsxq.com/id_i6kuvk0b81i8.html)
+[url]: (https://t.zsxq.com/2RvrzVf)
 
 看图：
 

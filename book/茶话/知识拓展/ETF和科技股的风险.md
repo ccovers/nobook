@@ -1,4 +1,5 @@
 # ETF和科技股的风险
+[url]: (https://t.zsxq.com/Beuvj6Y)
 
 给大家讲讲ETF和科技股的风险
 

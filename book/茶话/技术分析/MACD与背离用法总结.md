@@ -1,5 +1,7 @@
 # MACD与背离用法总结
 [MACD与背离用法总结]: (https://articles.zsxq.com/id_44rdhnwcwxuw.html)
+[url]: (MACD与背离用法总结)
+
 以中钢股份60分钟级别为例子：
 
 

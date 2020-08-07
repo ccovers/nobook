@@ -1,5 +1,6 @@
 # MACD和KDJ指标组合2、弱势区用法
 [MACD和KDJ指标组合2、弱势区用法]: (https://articles.zsxq.com/id_nzotpiwja2vl.html)
+[url]: (https://t.zsxq.com/YzNzVBm)
 
 看图：（由于文章图片无法放大，我会发多一份在外面，大家可以下载后放大看）
 

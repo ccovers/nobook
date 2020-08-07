@@ -1,5 +1,6 @@
 # MACD指标总结
 [MACD指标总结]: (https://articles.zsxq.com/id_03l0f4gevfvh.html)
+[url]: (https://t.zsxq.com/6I2rVvf)
 
 1、MCAD指标是趋势性指标，主要作用是指示趋势的作用。
 
