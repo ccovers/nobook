@@ -1,4 +1,5 @@
 # 近期做T思路
+[url]: (https://t.zsxq.com/UV3R3By)
 
 1、近期大起大落，所以周期要缩小。
 
