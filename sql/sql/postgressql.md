@@ -188,3 +188,10 @@ table veh_models {
 	ORDER BY id;
 ```
 
+
+* 表拷贝，并更新自增长值
+```
+TRUNCATE parts RESTART IDENTITY;
+INSERT INTO parts SELECT id,'',name FROM replacements;
+SELECT SETVAL('parts_id_seq', (SELECT MAX(id) FROM replacements));
+```
