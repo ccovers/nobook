@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [book]
     * [人生的智慧](book/人生的智慧.md)
-    * [数学之美](book/数学之美.md) 
+    * [数学之美](book/数学之美.md)
 * [git]
     * [git命令](git/git.md)
 * [linux]
@@ -12,13 +12,24 @@
     * [swap命令](linux/swap.md)
     * [sysctl命令](linux/sysctl.md)
 * [owner]
-    * [关于人性的一段记录](owner/关于人性的一段记录.md) 
+    * [关于人性的一段记录](owner/关于人性的一段记录.md)
 * [soft]
     * [fastdfs安装部署说明](soft/fastdfs安装部署说明.md)
     * [mysql读写分离](soft/mysql_rw_sperator.md)
     * [mysql主从分布](soft/mysql_slave_config.md)
-    * [postgres安装命令](soft/postgres安装命令.md)    
+    * [postgres安装命令](soft/postgres安装命令.md)
 * [sql]
-    * [mysql](sql/mysql.md) 
+    * [mysql](sql/mysql.md)
     * [postgres](sql/postgressql.md)
     * [sql](sql/sql.md)
+
+# 数目
+占有还是存在
+被讨厌的勇气
+列奥纳多 达 芬奇 传
+禅与摩托车维修艺术
+事实
+
+
+go build -gcflags -S main.go
+GOSSAFUNC=main go build main.go

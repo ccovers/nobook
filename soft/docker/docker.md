@@ -1,5 +1,11 @@
 # docker
 
+
+## `docker`核心概念
+- 镜像（image）
+- 容器（container）
+- 仓库（repository）
+
 - Docker 项目的目标是实现轻量级的操作系统虚拟化解决方案
 - Docker Engine 是一个基于虚拟化技术的轻量级并且功能强大的开源容器引擎管理工具。它可以将不同的 work flow 组合起来构建成你的应用
 
@@ -28,6 +34,8 @@ docker attach containerID
 docker start containerID
 docker stop containerID
 docker restart containerID
+
+docker run -d -p 80:80 --name webserver nginx
 
 
 
