@@ -23,13 +23,5 @@
     * [postgres](sql/postgressql.md)
     * [sql](sql/sql.md)
 
-# 数目
-占有还是存在
-被讨厌的勇气
-列奥纳多 达 芬奇 传
-禅与摩托车维修艺术
-事实
 
 
-go build -gcflags -S main.go
-GOSSAFUNC=main go build main.go
